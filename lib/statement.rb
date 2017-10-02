@@ -1,15 +1,25 @@
-class Statement
-
-  def header
-    "date || type || amount || balance"
-  end
-
-  def print
-    puts header
-  end
-
-  def body(array)
-    "#{array[0].date} || #{array[0].transaction_type} || £#{array[0].amount} || £#{array[0].balance}"
-  end 
-
-end
+# class Statement
+#   attr_reader :info
+#   def initialize(bank)
+#     @bank = bank
+#     @info = bank.transactions
+#   end
+#
+#   def print
+#     header
+#     body
+#   end
+#
+#   private
+#
+#   def header
+#     puts "date || type || amount || balance"
+#   end
+#
+#   def body
+#     @info.each do |element|
+#       puts "#{element.date} || #{element.transaction_type} || £#{element.amount} || £#{element.balance}"
+#     end
+#   end
+#
+# end

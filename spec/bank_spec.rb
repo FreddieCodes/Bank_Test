@@ -18,7 +18,7 @@ describe Bank do
     end
   end
 
-  context "transactions" do
+  context "Transactions" do
     it "transactions default is an empty array" do
       expect(bank.transactions.class).to eq(Array)
       expect(bank.transactions.length).to eq(0)
@@ -34,10 +34,20 @@ describe Bank do
       bank.decrease_balance(5, "12/11/17")
       expect(bank.transactions.length).to eq(2)
     end
-
   end
 
+  context "Print" do
+    it "prints out a header followed by the transactions" do
+      header = "date || type || amount || balance"
+      bank.increase_balance(10,"11/11/17")
+      expect { bank.print }.to output("#{header}\n11/11/17 || debit || £10 || £10\n").to_stdout
+    end
 
-
-
+    it "prints out a header followed by the transactions" do
+      header = "date || type || amount || balance"
+      bank.increase_balance(10,"11/11/17")
+      bank.decrease_balance(5, "12/11/17")
+      expect { bank.print }.to output("#{header}\n11/11/17 || debit || £10 || £10\n12/11/17 || credit || £5 || £5\n").to_stdout
+    end
+  end
 end
