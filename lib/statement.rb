@@ -1,6 +1,4 @@
 class Statement
-  # attr_reader :transactions
-
   def initialize(transactions)
     @transactions = transactions
   end
@@ -13,13 +11,12 @@ class Statement
   # private
 
   def header
-    puts "date || type || amount || balance"
+    puts 'date || type || amount || balance'
   end
 
   def body
     @transactions.each do |element|
-      puts "#{element.date} || #{element.transaction_type} || £#{element.amount} || £#{element.balance}"
+      puts "#{element.date} || #{element.transaction_type} || £#{element.amount.abs} || £#{element.balance}"
     end
   end
-
 end
