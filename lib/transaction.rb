@@ -8,19 +8,11 @@ class Transaction
   end
 
   def transaction_type
-    if credit
+    if @amount > 0
       @transaction_type = "£#{@amount.abs} ||"
     else
       @transaction_type = "|| £#{@amount.abs}"
     end
-  end
-
-  def credit
-    @amount > 0
-  end
-
-  def debit
-    @amount < 0
   end
 
 end
