@@ -24,11 +24,10 @@ $  irb
 >> client_name.change_balance(-500, "14-01-2012")
 >> client_name.print_statement
 
-date || type || amount || balance
-10-01-2012 || debit || £1000 || £1000
-13-01-2012 || debit || £2000 || £3000
-14-01-2012 || credit || £500 || £2500
-
+date || credit || debit || balance
+14/01/2012 || || 500.00 || 2500.00
+13/01/2012 || 2000.00 || || 3000.00
+10/01/2012 || 1000.00 || || 1000.00
 ```
 
 * To create an account for your client `client_name = Bank.new`
