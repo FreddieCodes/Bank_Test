@@ -17,9 +17,3 @@ class Bank
     Statement.new(@transactions).print
   end
 end
-
-### test #####
-# bank = Bank.new
-# bank.change_balance(-50, "11/11/17")
-# bank.change_balance(70, "11/11/17")
-# bank.print_statement

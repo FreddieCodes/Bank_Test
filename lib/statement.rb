@@ -8,8 +8,6 @@ class Statement
     body
   end
 
-  # private
-
   def header
     puts 'date || type || amount || balance'
   end
