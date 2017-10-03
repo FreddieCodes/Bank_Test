@@ -4,7 +4,6 @@ describe Transaction do
   subject(:transaction) { described_class.new(50, '01/10/17') }
   subject(:transaction2) { described_class.new(-50, '01/10/17') }
 
-
   it 'has an amount parameter which must be entered' do
     expect(transaction.amount).to be_truthy
   end
