@@ -35,3 +35,8 @@ date || type || amount || balance
 * To make a deposit `client_name.change_balance(amount, date)`
 * To make a withdrawal `client_name.change_balance(negative_amount, date)`
 * To print statement `client_name.print_statement`
+
+Testing
+---------
+
+```rspec```
