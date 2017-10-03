@@ -38,16 +38,16 @@ describe Bank do
 
   context 'print_statement' do
     it 'prints out a header followed by the transactions' do
-      header = 'date || type || amount || balance'
+      header = 'date || credit || debit || balance'
       bank.change_balance(10, '11/11/17')
-      expect { bank.print_statement }.to output("#{header}\n11/11/17 || credit || £10 || £10\n").to_stdout
+      expect { bank.print_statement }.to output("#{header}\n11/11/17 || £10 || || £10\n").to_stdout
     end
 
     it 'prints out a header followed by the transactions' do
-      header = 'date || type || amount || balance'
+      header = 'date || credit || debit || balance'
       bank.change_balance(10, '11/11/17')
       bank.change_balance(-5, '12/11/17')
-      expect { bank.print_statement }.to output("#{header}\n11/11/17 || credit || £10 || £10\n12/11/17 || debit || £5 || £5\n").to_stdout
+      expect { bank.print_statement }.to output("#{header}\n11/11/17 || £10 || || £10\n12/11/17 || || £5 || £5\n").to_stdout
     end
   end
 end

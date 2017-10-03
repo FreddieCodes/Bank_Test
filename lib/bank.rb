@@ -17,3 +17,8 @@ class Bank
     Statement.new(@transactions).print
   end
 end
+
+bank = Bank.new
+bank.change_balance(10, "30/10/15")
+bank.change_balance(-5, "31/10/15")
+bank.print_statement

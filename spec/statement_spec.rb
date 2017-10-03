@@ -12,7 +12,7 @@ describe Statement do
   end
 
   it 'header returns header string' do
-    header = 'date || type || amount || balance'
+    header = 'date || credit || debit || balance'
     expect { statement.header }.to output("#{header}\n").to_stdout
   end
 end

@@ -7,14 +7,20 @@ class Transaction
     @balance = balance
   end
 
-  # private
-
   def transaction_type
-    if @amount > 0
-      @transaction_type = 'credit'
+    if credit
+      @transaction_type = "£#{@amount.abs} ||"
     else
-      @transaction_type = 'debit'
+      @transaction_type = "|| £#{@amount.abs}"
     end
+  end
+
+  def credit
+    @amount > 0
+  end
+
+  def debit
+    @amount < 0
   end
 
 end

@@ -9,12 +9,13 @@ class Statement
   end
 
   def header
-    puts 'date || type || amount || balance'
+    puts 'date || credit || debit || balance'
   end
 
   def body
-    @transactions.each do |el|
-      puts "#{el.date} || #{el.transaction_type} || £#{el.amount.abs} || £#{el.balance}"
+    @transactions.each do |transaction|
+      puts "#{transaction.date} || #{transaction.transaction_type} || £#{transaction.balance}"
     end
   end
+
 end

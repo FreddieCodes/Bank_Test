@@ -12,15 +12,15 @@ describe Transaction do
     expect(transaction.date).to be_truthy
   end
 
-  it 'has a transaction_type parameter which must be debit or credit' do
+  xit 'has a transaction_type parameter which must be debit or credit' do
     expect(transaction.transaction_type).to eq('credit').or eq('debit')
   end
 
-  it 'should set the transaction type to credit if amount above 0' do
+  xit 'should set the transaction type to credit if amount above 0' do
     expect(transaction.transaction_type).to eq("credit")
   end
 
-  it 'should set the transaction type to debit if amount below 0' do
+  xit 'should set the transaction type to debit if amount below 0' do
     expect(transaction2.transaction_type).to eq("debit")
   end
 
