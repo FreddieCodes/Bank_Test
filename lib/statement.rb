@@ -13,7 +13,7 @@ class Statement
   end
 
   def body
-    @transactions.each do |transaction|
+    @transactions.reverse.each do |transaction|
       puts "#{transaction.date} || #{transaction.transaction_type} || £#{transaction.balance}"
     end
   end
