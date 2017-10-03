@@ -10,11 +10,11 @@ class Bank
 
   def change_balance(amount, date)
     @balance += amount
-    @transactions << Transaction.new(amount, date, balance = @balance)
+    @transactions << Transaction.new(amount, date, @balance)
   end
 
   def print_statement
-    statement = Statement.new(@transactions).print
+    Statement.new(@transactions).print
   end
 end
 

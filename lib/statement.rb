@@ -15,8 +15,8 @@ class Statement
   end
 
   def body
-    @transactions.each do |element|
-      puts "#{element.date} || #{element.transaction_type} || £#{element.amount.abs} || £#{element.balance}"
+    @transactions.each do |el|
+      puts "#{el.date} || #{el.transaction_type} || £#{el.amount.abs} || £#{el.balance}"
     end
   end
 end
