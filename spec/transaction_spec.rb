@@ -16,12 +16,12 @@ describe Transaction do
     expect(transaction.transaction_type).to eq('credit').or eq('debit')
   end
 
-  it 'should set the transaction type to debit if amount above 0' do
-    expect(transaction.transaction_type).to eq("debit")
+  it 'should set the transaction type to credit if amount above 0' do
+    expect(transaction.transaction_type).to eq("credit")
   end
 
-  it 'should set the transaction type to credit if amount below 0' do
-    expect(transaction2.transaction_type).to eq("credit")
+  it 'should set the transaction type to debit if amount below 0' do
+    expect(transaction2.transaction_type).to eq("debit")
   end
 
   it 'should have a balance parameter' do
