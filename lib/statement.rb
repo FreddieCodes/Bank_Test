@@ -10,6 +10,8 @@ class Statement
     body
   end
 
+  private
+
   def header
     puts 'date || credit || debit || balance'
   end
@@ -23,10 +25,18 @@ class Statement
   def format_amount(transactions)
     type = transactions.transaction_type
     if type == "debit"
-       "#{transactions.date} || || #{transactions.amount.abs}.00 || #{transactions.balance}.00"
+      debit_row(transactions)
     else
-       "#{transactions.date} || #{transactions.amount.abs}.00 || || #{transactions.balance}.00"
+      credit_row(transactions)
     end
+  end
+
+  def debit_row(transactions)
+    "#{transactions.date} || || #{transactions.amount.abs}.00 || #{transactions.balance}.00"
+  end
+
+  def credit_row(transactions)
+    "#{transactions.date} || #{transactions.amount.abs}.00 || || #{transactions.balance}.00"
   end
 
 end

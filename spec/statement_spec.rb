@@ -7,11 +7,11 @@ describe Statement do
     expect(statement).to respond_to(:print)
   end
 
-  it 'should have a header method' do
+  xit 'should have a header method' do
     expect(statement).to respond_to(:header)
   end
 
-  it 'header returns header string' do
+  xit 'header returns header string' do
     header = 'date || credit || debit || balance'
     expect { statement.header }.to output("#{header}\n").to_stdout
   end
