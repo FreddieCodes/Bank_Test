@@ -1,4 +1,6 @@
 class Statement
+  attr_reader :transactions
+
   def initialize(transactions)
     @transactions = transactions
   end
@@ -8,24 +10,23 @@ class Statement
     body
   end
 
-  # private
-
   def header
     puts 'date || credit || debit || balance'
   end
 
   def body
     @transactions.reverse.each do |transaction|
-      puts "#{transaction.date} || #{transaction.transaction_type} || #{transaction.balance}.00"
+      puts format_amount(transaction)
     end
   end
 
-  # def transaction_type
-  #   if @amount > 0
-  #     @transaction_type = "#{@amount.abs} ||"
-  #   else
-  #     @transaction_type = "|| #{@amount.abs}"
-  #   end
-  # end
+  def format_amount(transactions)
+    type = transactions.transaction_type
+    if type == "debit"
+       "#{transactions.date} || || #{transactions.amount.abs}.00 || #{transactions.balance}.00"
+    else
+       "#{transactions.date} || #{transactions.amount.abs}.00 || || #{transactions.balance}.00"
+    end
+  end
 
 end

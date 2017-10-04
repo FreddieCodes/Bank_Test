@@ -9,10 +9,10 @@ class Transaction
 
   def transaction_type
     if @amount > 0
-      @transaction_type = "#{@amount.abs}.00 ||"
+      @transaction_type = "credit"
     else
-      @transaction_type = "|| #{@amount.abs}.00"
+      @transaction_type = "debit"
     end
   end
-
+  
 end
