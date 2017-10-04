@@ -40,14 +40,14 @@ describe Bank do
     it 'prints out a header followed by the transactions' do
       header = 'date || credit || debit || balance'
       bank.change_balance(10, '11/11/2017')
-      expect { bank.print_statement }.to output("#{header}\n11/11/2017 || 10 || || 10\n").to_stdout
+      expect { bank.print_statement }.to output("#{header}\n11/11/2017 || 10.00 || || 10.00\n").to_stdout
     end
 
     it 'prints out a header followed by the transactions' do
       header = 'date || credit || debit || balance'
       bank.change_balance(10, '11/11/2017')
       bank.change_balance(-5, '12/11/2017')
-      expect { bank.print_statement }.to output("#{header}\n12/11/2017 || || 5 || 5\n11/11/2017 || 10 || || 10\n").to_stdout
+      expect { bank.print_statement }.to output("#{header}\n12/11/2017 || || 5.00 || 5.00\n11/11/2017 || 10.00 || || 10.00\n").to_stdout
     end
   end
 end

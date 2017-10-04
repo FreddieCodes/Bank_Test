@@ -16,7 +16,7 @@ class Statement
 
   def body
     @transactions.reverse.each do |transaction|
-      puts "#{transaction.date} || #{transaction.transaction_type} || #{transaction.balance}"
+      puts "#{transaction.date} || #{transaction.transaction_type} || #{transaction.balance}.00"
     end
   end
 
