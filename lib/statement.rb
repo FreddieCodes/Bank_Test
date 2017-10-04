@@ -8,6 +8,8 @@ class Statement
     body
   end
 
+  # private
+
   def header
     puts 'date || credit || debit || balance'
   end
@@ -17,5 +19,13 @@ class Statement
       puts "#{transaction.date} || #{transaction.transaction_type} || #{transaction.balance}"
     end
   end
+
+  # def transaction_type
+  #   if @amount > 0
+  #     @transaction_type = "#{@amount.abs} ||"
+  #   else
+  #     @transaction_type = "|| #{@amount.abs}"
+  #   end
+  # end
 
 end
