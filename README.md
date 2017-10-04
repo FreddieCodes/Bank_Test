@@ -18,10 +18,9 @@ $  irb
 >> require './lib/transaction.rb'
 >> require './lib/statement.rb'
 >> client_name  = Bank.new
->> cient_name.change_balance(1000, "10-01-2012")
->> client_name.change_balance(1000, "10-01-2012")
->> client_name.change_balance(2000, "13-01-2012")
->> client_name.change_balance(-500, "14-01-2012")
+>> client_name.change_balance(1000, "10/01/2012")
+>> client_name.change_balance(2000, "13/01/2012")
+>> client_name.change_balance(-500, "14/01/2012")
 >> client_name.print_statement
 
 date || credit || debit || balance
@@ -29,6 +28,7 @@ date || credit || debit || balance
 13/01/2012 || 2000.00 || || 3000.00
 10/01/2012 || 1000.00 || || 1000.00
 ```
+To run an example navigate to directory and run ruby test.rb in your terminal:
 
 * To create an account for your client `client_name = Bank.new`
 * To make a deposit `client_name.change_balance(amount, date)`
@@ -38,4 +38,4 @@ date || credit || debit || balance
 Testing
 ---------
 
-```rspec```
+```rspec``` was used for testing
