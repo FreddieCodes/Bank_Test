@@ -14,5 +14,5 @@ class Transaction
       @transaction_type = "debit"
     end
   end
-  
+
 end

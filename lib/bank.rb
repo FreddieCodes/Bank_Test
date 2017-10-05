@@ -18,9 +18,3 @@ class Bank
     statement.print
   end
 end
-
-bank = Bank.new
-bank.change_balance(1000, '10/01/2012')
-bank.change_balance(2000, '13/01/2012')
-bank.change_balance(-500, '14/01/2012')
-bank.print_statement
