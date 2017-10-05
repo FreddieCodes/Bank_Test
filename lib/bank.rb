@@ -3,7 +3,7 @@ require_relative 'statement'
 require_relative 'format'
 
 class Bank
-  attr_reader :balance, :transactions, :formatted_list
+  attr_reader :balance, :transactions
 
   def initialize
     @balance = 0

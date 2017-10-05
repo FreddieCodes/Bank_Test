@@ -9,6 +9,7 @@ class Statement
     header
     body
   end
+  
   private
 
   def header
