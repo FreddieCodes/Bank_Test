@@ -1,6 +1,7 @@
 require_relative 'transaction'
 require_relative 'statement'
-require_relative 'formatter'
+require_relative 'format'
+
 class Bank
   attr_reader :balance, :transactions, :formatted_list
 
@@ -9,12 +10,16 @@ class Bank
     @transactions = []
   end
 
-  def change_balance(amount, date)
+  def deposit(amount, date)
     @balance += amount
     transaction = Transaction.new(amount, date, @balance)
-    @transactions.unshift(transaction)
-    # @form
-    atted_list << Formatter.new(transaction)
+    @transactions.unshift(CreditFormat.format(transaction))
+  end
+
+  def withdrawal(amount, date)
+    @balance -= amount
+    transaction = Transaction.new(amount, date, @balance)
+    @transactions.unshift(DebitFormat.format(transaction))
   end
 
   def print_statement

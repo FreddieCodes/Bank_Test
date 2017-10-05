@@ -9,7 +9,6 @@ class Statement
     header
     body
   end
-
   private
 
   def header
@@ -18,7 +17,7 @@ class Statement
 
   def body
     @transactions.each do |transaction|
-      puts "#{transaction.date} || #{transaction.transaction_type} || #{transaction.balance}.00"
+      puts transaction
     end
   end
 
